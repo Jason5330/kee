@@ -1,0 +1,20 @@
+# 個人知識庫內容——這是每個使用者自己的資料，不進版本控制。
+# 進版本控制的只有「系統本體」：CLAUDE.md / AGENTS.md / _templates / 指令檔 / *.example.md
+sources/*
+!sources/.gitkeep
+!sources/README.md
+
+wiki/index.md
+wiki/log.md
+
+wiki/entities/*
+!wiki/entities/.gitkeep
+wiki/concepts/*
+!wiki/concepts/.gitkeep
+wiki/projects/*
+!wiki/projects/.gitkeep
+wiki/moc/*
+!wiki/moc/.gitkeep
+
+# 本機專屬設定，不同人權限不一樣，不共用
+.claude/settings.local.json
