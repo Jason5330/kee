@@ -14,6 +14,36 @@ Codex 用 `.codex/prompts/`，內容互為鏡像。
 > 就算 slash command 完全不吃，直接跟 Codex 打自然語言「幫我 ingest 這個」也會生效，
 > 因為觸發規則本來就寫在 `CLAUDE.md`／`AGENTS.md` 裡，不綁定特定語法。
 
+## 下載安裝
+
+不用裝任何額外軟體，不用資料庫，不用 Obsidian。**唯一前提**：電腦上已經裝好
+[Claude Code](https://claude.com/claude-code) 或 [Codex CLI](https://developers.openai.com/codex)
+其中一個——這個 repo 本身只是一堆規則檔案，是給這兩個工具讀的，不是獨立跑的程式。
+
+```
+方法一：會用 git
+  git clone https://github.com/Jason5330/kee.git
+  cd kee
+
+方法二：不會用 git
+  打開 https://github.com/Jason5330/kee
+  → 綠色「Code」按鈕 → Download ZIP → 解壓縮 → 打開那個資料夾
+```
+
+## 開始使用
+
+在剛剛那個資料夾（`kee`）裡開終端機：
+
+```
+用 Claude Code：cd kee → 執行 claude
+用 Codex CLI： cd kee → 執行 codex
+```
+
+**位置一定要在 `kee` 資料夾裡面**，工具才找得到 `CLAUDE.md`／`AGENTS.md` 和指令檔。
+第一次用，wiki 是空的：直接丟資料進去說「/ingest」，或先問問題看它怎麼回應都可以——
+第一次動作時 agent 會自動把 `wiki/index.example.md`、`wiki/log.example.md` 複製成正式在用的
+`wiki/index.md`、`wiki/log.md`，不用手動處理。
+
 ## 三個指令，日常只用這三個
 
 ```
