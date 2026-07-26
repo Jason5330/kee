@@ -18,3 +18,6 @@ wiki/moc/*
 
 # 本機專屬設定，不同人權限不一樣，不共用
 .claude/settings.local.json
+
+# 交接/工作階段筆記——給人看的私人文件，不是系統本體
+HANDOFF.md
