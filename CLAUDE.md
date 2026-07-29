@@ -1,8 +1,10 @@
 # KEE — 本地知識庫（Schema 層）
 
-> 這份檔案是整個知識庫的「設計圖」，是唯一的權威規則來源（single source of truth）。
-> 不管你是 **Claude Code** 還是 **Codex CLI**，只要在這個目錄下工作，都必須先完整讀這份檔案再動作。
-> `AGENTS.md` 只是一個指向這裡的短指標檔（給不讀 CLAUDE.md 的工具用），內容以這份為準。
+> 這份檔案是整個知識庫的「設計圖」，是唯一的權威規則來源（single source of truth）——
+> 規則要改，先改這裡。`AGENTS.md` 是給 Codex CLI／遵循 agents.md 標準的工具用的**完整鏡像**
+> （不是短指標檔）：這類工具預設只讀 `AGENTS.md`，不會主動跳去讀 `CLAUDE.md`，所以規則
+> 內容本身必須整份複製過去，不能只留一句「去讀 CLAUDE.md」。**每次改這份檔案的操作規則
+> （三個核心操作、頁面格式等），都要同步把改動複製進 `AGENTS.md`，兩份內容要一致。**
 >
 > 架構原理：Karpathy「LLM Wiki」模式（LLM 維護一個持續累積的 wiki，而不是每次現場 RAG）
 > + Obsidian 精神（原子筆記、雙向連結、MOC 索引頁）。純 Markdown 檔案取代 Obsidian 軟體本身——
@@ -13,14 +15,15 @@
 ```
 sources/   ← 原始資料，唯讀、永不修改（PDF、文章、逐字稿、截圖 OCR 文字…）
 wiki/      ← Agent 維護的知識庫本體，會持續增長、修改、互相連結
-CLAUDE.md  ← 這份檔案本身（schema 層），規則變了才改這裡
-AGENTS.md  ← 給 Codex/其他 agent 看的指標檔，內容只是「去讀 CLAUDE.md」
+CLAUDE.md  ← 規則的編輯本體（schema 層），規則變了先改這裡
+AGENTS.md  ← 給 Codex/其他 agent 看的完整鏡像，內容要跟 CLAUDE.md 的規則段落保持一致
 ```
 
 規則：
 - `sources/` 裡的檔案**絕對不能被 agent 編輯或刪除**，只能讀取、引用。
 - `wiki/` 裡的每一頁都是 agent 寫的、agent 維護的，使用者通常不用手動編輯。
 - 這份 `CLAUDE.md` 只在「知識庫的運作規則要改」時才動，不是拿來記知識本身。
+- 改完 `CLAUDE.md` 的規則段落後，**一定要把同樣的改動同步進 `AGENTS.md`**，不能只改一份。
 
 ## wiki/ 內部結構
 
